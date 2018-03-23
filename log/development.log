@@ -154,3 +154,20 @@ Processing by StudentsController#show as HTML
   [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
   Rendered students/show.html.erb within layouts/application (0.2ms)
 Completed 200 OK in 46ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/students" for 96.67.5.73 at 2018-03-23 15:28:58 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zw1GDwg54/apA0fTduyuR/SCEGraMbPtXcpgenUEw9PElg4S81akN8mpi9E5ZYORA2DvU1xy61rymyFLjZpvyA==", "student"=>{"first_name"=>"Jon", "last_name"=>"S"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "Jon"], ["last_name", "S"], ["created_at", "2018-03-23 15:28:58.959036"], ["updated_at", "2018-03-23 15:28:58.959036"]]
+  [1m[35m (3.0ms)[0m  commit transaction
+Redirected to http://192.241.157.192:33751/students/4
+Completed 302 Found in 18ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/students/4" for 96.67.5.73 at 2018-03-23 15:28:58 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered students/show.html.erb within layouts/application (0.2ms)
