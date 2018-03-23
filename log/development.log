@@ -88,3 +88,29 @@ Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafd
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 96.67.5.73 at 2018-03-23 15:24:24 +0000
+
+
+Started GET "/students/new" for 96.67.5.73 at 2018-03-23 15:26:05 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 500ms (Views: 476.5ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/students" for 96.67.5.73 at 2018-03-23 15:26:11 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zw1GDwg54/apA0fTduyuR/SCEGraMbPtXcpgenUEw9PElg4S81akN8mpi9E5ZYORA2DvU1xy61rymyFLjZpvyA==", "student"=>{"first_name"=>"Jon", "last_name"=>"B"}, "commit"=>"Create Student"}
+Unpermitted parameters: first_name, last_name
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "students" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2018-03-23 15:26:11.401479"], ["updated_at", "2018-03-23 15:26:11.401479"]]
+  [1m[35m (36.5ms)[0m  commit transaction
+Redirected to http://192.241.157.192:33751/students/3
+Completed 302 Found in 43ms (ActiveRecord: 37.6ms)
+
+
+Started GET "/students/3" for 96.67.5.73 at 2018-03-23 15:26:11 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 3]]
+  Rendered students/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 28ms (Views: 17.4ms | ActiveRecord: 0.3ms)
