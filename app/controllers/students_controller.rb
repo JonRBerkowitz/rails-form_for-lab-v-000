@@ -3,8 +3,10 @@ class StudentsController < ApplicationController
     @student = Student.find(params[:id])
   end
 
-  def new
-    @student = Student.new
+  def create
+    @student = Student.new(student_params)
+    @student.save
+    redirect_to student_path(@student)
   end
 
   def edit
