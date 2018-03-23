@@ -180,3 +180,8 @@ Processing by StudentsController#show as HTML
   [1m[35mStudent Load (0.1ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 3]]
   Rendered students/show.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/students/new" for 96.67.5.73 at 2018-03-23 15:31:23 +0000
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (3.5ms)
